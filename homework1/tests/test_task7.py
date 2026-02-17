@@ -1,6 +1,7 @@
 from src.task7 import matrix1, matrix2, addMatrices, dotMatrices, crossMatrices
 import numpy as np
 
+# check that the output is a matrix, 3 x 3 matrix and it matches the manual output
 def test_addMatrices():
     result = addMatrices(matrix1, matrix2)
     assert isinstance(result, np.ndarray)
@@ -10,6 +11,7 @@ def test_addMatrices():
                               [ 5,  9,  7]])
     np.testing.assert_array_equal(result, expectedAns)
 
+# check that the output is a matrix, 3 x 3 matrix and it matches the manual output
 def test_dotMatrices():
     result = dotMatrices(matrix1, matrix2)
     assert isinstance(result, np.ndarray)
@@ -19,6 +21,7 @@ def test_dotMatrices():
                               [ 40,  40,  30]])
     np.testing.assert_array_equal(result, expectedAns)
 
+# check that the output is a matrix, 3 x 3 matrix and it matches the manual output
 def test_crossMatrices():
     result = crossMatrices(matrix1, matrix2)
     assert isinstance(result, np.ndarray)
