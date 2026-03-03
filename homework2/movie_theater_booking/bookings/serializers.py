@@ -12,9 +12,7 @@ class SeatSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BookingSerializer(serializers.ModelSerializer):
-    movie = serializers.StringRelatedField()
-    seat = serializers.StringRelatedField()
-    user = serializers.SlugRelatedField(slug_field='username', read_only=True)
+
 
     class Meta:
         model = Booking
