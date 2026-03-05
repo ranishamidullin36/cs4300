@@ -1,13 +1,31 @@
 {% extends 'bookings/base.html' %}
-{% block title %}Book Seat{% endblock %}
+{% block title %}Book Seat - {{ movie.title }}{% endblock %}
 {% block content %}
-<h2>Book a Seat</h2>
+<h2 class="mb-4">Book a Seat for "{{ movie.title }}"</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <p><strong>Description:</strong> {{ movie.description }}</p>
+        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Duration:</strong> {{ movie.duration }} minutes</p>
+    </div>
+</div>
+{% if available_seats %}
 <form method="post">
     {% csrf_token %}
     <div class="mb-3">
-        <label for="seat_number" class="form-label">Seat Number</label>
-        <input type="text" class="form-control" id="seat_number" name="seat_number">
+        <label for="seat_number" class="form-label">Select a Seat</label>
+        <select class="form-select" id="seat_number" name="seat_number" required>
+            <option value="">-- Choose a seat --</option>
+            {% for seat in available_seats %}
+            <option value="{{ seat.seat_number }}">{{ seat.seat_number }}</option>
+            {% endfor %}
+        </select>
     </div>
     <button type="submit" class="btn btn-success">Book Seat</button>
+    <a href="{% url 'movie_list' %}" class="btn btn-secondary">Back to Movies</a>
 </form>
+{% else %}
+<div class="alert alert-warning">No seats available for this movie.</div>
+<a href="{% url 'movie_list' %}" class="btn btn-secondary">Back to Movies</a>
+{% endif %}
 {% endblock %}

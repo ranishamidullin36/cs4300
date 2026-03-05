@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from .models import Movie, Seat, Booking
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -12,7 +13,10 @@ class SeatSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class BookingSerializer(serializers.ModelSerializer):
-
+    user = serializers.SlugRelatedField(
+        slug_field='username',
+        queryset=User.objects.all()
+    )
 
     class Meta:
         model = Booking
