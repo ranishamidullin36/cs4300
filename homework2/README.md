@@ -29,3 +29,13 @@
 ## AI Disclosure
 
 AI tools (GitHub Copilot) were used to assist with code generation, debugging, and writing tests for this project.
+
+• asked it to build me moddels for booking, seats, and movies, and then later add them to the admin page
+• asked it to make a simple home page that has interactible book now on every movie object that is created while displaying all the information about the movies
+• asked it to make a page for when clicked on book now, it takes you to select a seat for that movie while adds it to the bookings model
+• some things didnt run properly, so i asked to fix some things like when booking a movie seat, it used that seat for all movies instead of that one specific, or when
+    i deleted that booking in admid page, it wouldn't automatically mark the seat as false(which is not reserved)
+• asked it to help me generate tests for all of my models to make sure they all work the way they should
+• asked it then to style the page a bit like making it black and so on
+• asked for bug fixes
+• had issues with render so i pasted some log files for it to fix the issue of building the site online
