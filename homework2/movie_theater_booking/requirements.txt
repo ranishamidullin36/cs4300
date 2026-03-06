@@ -16,7 +16,6 @@ Django==4.2.11
 djangorestframework==3.16.1
 fonttools==4.61.1
 gunicorn==25.1.0
-gyp==0.1
 h11==0.16.0
 idna==3.11
 iniconfig==2.3.0
